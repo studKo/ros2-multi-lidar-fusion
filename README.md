@@ -313,13 +313,13 @@ w/ (Workspace Root)
 ├── lidar_control/              # 소스코드 및 런치 파일 통합 상위 디렉토리
 │   ├── launch/                 # 시스템 자동 구동을 위한 런치 스크립트 폴더
 │   │   ├── foxglove_launch.py  # Foxglove WebSocket 브리지 및 통합 데이터 송출 실행 런치 파일
-│   │   └── lidars_launch.py    # 8대 라이다 드라이버 동시 실행 및 정적 TF 브로드캐스팅 런치 파일
+│   │   └── lidars_launch.py    # Raspberry Pi별 TG30(1대)·GS2(2대) 드라이버 실행 및 정적 TF 브로드캐스팅 런치 파일
 │   │
 │   └── lidar_control/          # ROS2 실제 파이썬 소스코드 프로그램 디렉토리
 │       ├── __init__.py         # 디렉토리를 파이썬 모듈/패키지로 인식시키기 위한 필수 초기화 파일
 │       ├── controller.py       # 전체 센서 노드의 수명 주기 및 상태 관제용 중앙 제어 노드
+│       ├── d1_total_launch.py  # Seyond Hummingbird D1 2대의 ROS2 드라이버(seyond_node) 동시 실행 런치 파일
 │       ├── gs2_bypasser.py     # YDLidar GS2 시리얼 데이터를 수신하고 표준 Scan 메시지로 변환하는 노드
-│       ├── hummingbird_bypasser.py # Seyond Hummingbird D1 UDP raw 데이터를 수신하고 PointCloud2로 중계하는 노드
 │       └── tg30_bypasser.py    # YDLidar TG30 시리얼 데이터를 수신하고 표준 Scan 메시지로 변환하는 노드
 │
 ├── resource/                   # ROS2 빌드 인덱스 자원 디렉토리
